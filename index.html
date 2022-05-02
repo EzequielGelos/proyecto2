@@ -4,54 +4,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./estilos/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@1,200&family=Bebas+Neue&family=Roboto+Serif&family=Roboto:ital,wght@0,100;0,400;1,300;1,500;1,900&display=swap" rel="stylesheet">
     <title>1942</title>
 </head>
 <body>
-    <header class="mainHeader">
-        <div class="container containerFlex"> 
-                <div class="mainHeaderContainer">
-                    <h1 class="mainHeaderTitulo">1942</h1>
-                    <span class="iconMenu" id="btnMenu"><i class="fa-solid fa-bars"></i></span>
-                    <nav class="mainNav" id="mainNav">
-                        <ul class="menu">
-                            <li class="menuLi"><a href="" class="menuA">HOME</a></li>
-                            <li class="menuLi"><a href="" class="menuA">ABOUT</a></li>
-                            <li class="menuLi"><a href="" class="menuA">SHOP</a></li>
-                            <li class="menuLi"><a href="" class="menuA">CONTACT</a></li>
-                            <li class="menuLi"><a href="" class="menuA">FAQS</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                
-            <div class="mainHeaderContainer">
-                <span class="mainHeaderRedes">Instagram</span>
-                <span class="mainHeaderRedes"> <i class="fa-solid fa-mobile-button"></i> Whatsapp 1234567899 </span>
-            </div>
+    <div class="container">
+        <h1>1942</h1>
 
-            <div class="mainHeaderContainer">
-                <a href="" class="mainHeaderLink"><i class="fa-solid fa-address-book"></i></a>
-                <a href="" class="mainHeaderBtn">Shop <span class="fa-solid fa-cart-shopping"></span></a>
-                <input type="search" name="" id="" class="mainHeaderInp" placeholder="Buscar Productos"><span class="fa-solid fa-magnifying-glass"></span>
-            </div>
-            
-        
-    </header>
-    <main class="main">
-        <div class="containerDos" id="containerDos">
-            <h2 class="mainTitulo"> Productos </h2>
-                
+        <hr>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Acción</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody id="items"></tbody>
+            <tfoot>
+                <tr id="footer">
+                    <th scope="row" colspan="S">Carrito vacío </th>
+                </tr>
+            </tfoot>
+
+        </table>
+        <div class="row" id="cards">
+
         </div>
-    </main>
-    
-</div>
+    </div>
+    <template id="template-footer">
+        <th scope="row" colspan="2">Total Productos</th>
+        <td>10</td>
+        <td>
+            <button class="btn btn-danger btn-sm" id="vaciar-carrito">
+                vaciar todo
+            </button>
+        </td>
+        <td class="font-weight-bold"><span>5000</span></td>
+    </template>
+    <template id="template-carrito">
+        <tr>
+            <th scope="row">id</th>
+            <td>Café</td>
+            <td>1</td>
+            <td>
+                <button class="btn btn-info btn-sm"> 
+                    + 
+                </button>
+                <button class="btn btn-danger btn-sm">
+                    -
+                </button>
+            </td>
+            <td>$ <span>500</span></td>
+        </tr>
+    </template>
 
 
 
-<script src="main.js"></script>
+    <template id="template-card" >
+        <div class="col-12 mb-2 col-md-4">
+            <div class="card">
+                <img src="" alt="" class="card-img-top">
+                <div class="card-body">
+                    <span>Titulo</span>
+                    <p>precio</p>
+                    <button class="btn btn-dark">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </template>
+    <script src="main.js"></script>
 </body>
 </html>

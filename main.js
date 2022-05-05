@@ -55,6 +55,11 @@ const addCarrito = e => {
     if(e.target.classList.contains('btn-dark')) {
         setCarrito(e.target.parentElement)
     }
+    swal.fire({
+        title: "Has agregado este producto al carrito",
+        text: "Lo verás allí",
+        icon: "success",
+      });
     e.stopPropagation()
 }
 
@@ -138,6 +143,7 @@ const btnAccion = e => {
         if(producto.cantidad === 0) {
             delete carrito[e.target.dataset.id]
         }
+        
         pintarCarrito()
     }
     e.stopPropagation()
